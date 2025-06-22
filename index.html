@@ -242,32 +242,44 @@
 
         .project-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             margin: 2rem 0;
+        }
+
+        .project-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.6);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
 
         .project-img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             background: rgba(255,255,255,0.1);
             border-radius: 10px;
             color: rgba(255,255,255,0.7);
             font-size: 0.9rem;
-            border: 2px solid rgba(255,255,255,0.3);
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             transition: all 0.3s ease;
             overflow: hidden;
             position: relative;
             cursor: pointer;
+            margin-bottom: 1rem;
         }
 
         .project-img:hover {
-            transform: scale(1.05);
-            border-color: rgba(255,255,255,0.8);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transform: scale(1.02);
         }
 
         .project-img::before {
@@ -300,6 +312,60 @@
 
         .project-img:hover::after {
             opacity: 1;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.7rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .project-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.6);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .project-btn.portfolio {
+            background: rgba(76, 175, 80, 0.3);
+            border-color: rgba(76, 175, 80, 0.5);
+        }
+
+        .project-btn.site {
+            background: rgba(33, 150, 243, 0.3);
+            border-color: rgba(33, 150, 243, 0.5);
+        }
+
+        .project-btn.portfolio:hover {
+            background: rgba(76, 175, 80, 0.5);
+        }
+
+        .project-btn.site:hover {
+            background: rgba(33, 150, 243, 0.5);
         }
 
         /* Modal styles */
@@ -499,6 +565,14 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .project-buttons {
+                flex-direction: column;
+            }
         }
 
         /* Scroll animations */
@@ -593,14 +667,65 @@
             
             <div class="project-highlight fade-in">
                 <div class="project-content">
-                    <h3><i class="fas fa-star"></i> Projeto Carro-Chefe: BancoMatrix.store</h3>
-                    <p>Demonstração completa do meu potencial em programação. Sistema desenvolvido em sandbox ASAAS, integrando múltiplas tecnologias para criar uma solução robusta e inovadora.</p>
+                    <h3><i class="fas fa-star"></i> Projetos Desenvolvidos</h3>
+                    <p>Demonstração completa do meu potencial em programação. Sistemas desenvolvidos com múltiplas tecnologias para criar soluções robustas e inovadoras.</p>
                     
                     <div class="project-gallery">
-                        <div class="project-img" style="background-image: url('matrix1.jpg');" onclick="openModal('matrix1.jpg', 0)"></div>
-                        <div class="project-img" style="background-image: url('matrix2.jpg');" onclick="openModal('matrix2.jpg', 1)"></div>
-                        <div class="project-img" style="background-image: url('matrix3.jpg');" onclick="openModal('matrix3.jpg', 2)"></div>
-                        <div class="project-img" style="background-image: url('matrix4.jpg');" onclick="openModal('matrix4.jpg', 3)"></div>
+                        <!-- Matrix 1 - BancoMatrix -->
+                        <div class="project-item">
+                            <div class="project-img" style="background-image: url('matrix1.jpg');" onclick="openModal('matrix1.jpg', 0)"></div>
+                            <div class="project-title">BancoMatrix Store</div>
+                            <div class="project-buttons">
+                                <a href="https://github.com/WellingtonProgramador10/BancoMatrix" target="_blank" class="project-btn portfolio">
+                                    <i class="fab fa-github"></i> Portfólio
+                                </a>
+                                <a href="https://www.bancomatrix.store/" target="_blank" class="project-btn site">
+                                    <i class="fas fa-external-link-alt"></i> Site
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Matrix 2 - ClinicaSaude -->
+                        <div class="project-item">
+                            <div class="project-img" style="background-image: url('matrix2.jpg');" onclick="openModal('matrix2.jpg', 1)"></div>
+                            <div class="project-title">Clínica Saúde</div>
+                            <div class="project-buttons">
+                                <a href="https://github.com/WellingtonProgramador10/ClinicaSaude" target="_blank" class="project-btn portfolio">
+                                    <i class="fab fa-github"></i> Portfólio
+                                </a>
+                                <a href="https://wellingtonprogramador10.github.io/ClinicaSaude/" target="_blank" class="project-btn site">
+                                    <i class="fas fa-external-link-alt"></i> Site
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Matrix 3 - Portfolio/LojinhaOnline -->
+                        <div class="project-item">
+                            <div class="project-img" style="background-image: url('matrix3.jpg');" onclick="openModal('matrix3.jpg', 2)"></div>
+                            <div class="project-title">Portfolio & Lojinha Online</div>
+                            <div class="project-buttons">
+                                <a href="https://wellingtonprogramador10.github.io/Portfolio/" target="_blank" class="project-btn portfolio">
+                                    <i class="fab fa-github"></i> Portfólio
+                                </a>
+                                <a href="https://wellingtonprogramador10.github.io/LojinhaOnline/" target="_blank" class="project-btn site">
+                                    <i class="fas fa-external-link-alt"></i> Site
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Matrix 4 - BarbeariaModerna -->
+                        <div class="project-item">
+                            <div class="project-img" style="background-image: url('matrix4.jpg');" onclick="openModal('matrix4.jpg', 3)"></div>
+                            <div class="project-title">Barbearia Moderna</div>
+                            <div class="project-buttons">
+                                <a href="https://github.com/WellingtonProgramador10/BarbeariaModerna" target="_blank" class="project-btn portfolio">
+                                    <i class="fab fa-github"></i> Portfólio
+                                </a>
+                                <a href="https://wellingtonprogramador10.github.io/BarbeariaModerna/" target="_blank" class="project-btn site">
+                                    <i class="fas fa-external-link-alt"></i> Site
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     
                     <p><strong>Tecnologias utilizadas:</strong> HTML5, CSS3, JavaScript, React.js, Python, Node.js, Integração com APIs</p>
@@ -661,7 +786,7 @@
         <div class="modal-nav prev" onclick="changeImage(-1)">&#10094;</div>
         <div class="modal-nav next" onclick="changeImage(1)">&#10095;</div>
         <div class="modal-content">
-            <img id="modalImg" src="" alt="Projeto BancoMatrix">
+            <img id="modalImg" src="" alt="Projeto">
         </div>
     </div>
 
@@ -739,19 +864,16 @@
             }, 100);
         });
 
-        // Modal functionality for project images
-        const projectImages = ['matrix1.jpg', 'matrix2.jpg', 'matrix3.jpg', 'matrix4.jpg'];
+        // Modal functionality
+        const images = ['matrix1.jpg', 'matrix2.jpg', 'matrix3.jpg', 'matrix4.jpg'];
         let currentImageIndex = 0;
 
         function openModal(imageSrc, index) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImg');
-            
             modal.style.display = 'block';
             modalImg.src = imageSrc;
             currentImageIndex = index;
-            
-            // Prevent body scroll when modal is open
             document.body.style.overflow = 'hidden';
         }
 
@@ -763,42 +885,86 @@
 
         function changeImage(direction) {
             currentImageIndex += direction;
-            
-            if (currentImageIndex >= projectImages.length) {
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
                 currentImageIndex = 0;
-            } else if (currentImageIndex < 0) {
-                currentImageIndex = projectImages.length - 1;
             }
-            
             const modalImg = document.getElementById('modalImg');
-            modalImg.src = projectImages[currentImageIndex];
+            modalImg.src = images[currentImageIndex];
         }
 
         // Close modal when clicking outside the image
-        window.addEventListener('click', (event) => {
+        window.addEventListener('click', (e) => {
             const modal = document.getElementById('imageModal');
-            if (event.target === modal) {
+            if (e.target === modal) {
                 closeModal();
             }
         });
 
-        // Keyboard navigation for modal
-        document.addEventListener('keydown', (event) => {
-            const modal = document.getElementById('imageModal');
-            if (modal.style.display === 'block') {
-                switch(event.key) {
-                    case 'Escape':
-                        closeModal();
-                        break;
-                    case 'ArrowLeft':
-                        changeImage(-1);
-                        break;
-                    case 'ArrowRight':
-                        changeImage(1);
-                        break;
-                }
+        // Close modal with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
             }
         });
+
+        // Animate skill cards on scroll
+        const skillCards = document.querySelectorAll('.skill-card');
+        skillCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Add hover effect to project buttons
+        document.querySelectorAll('.project-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-2px) scale(1)';
+            });
+        });
+
+        // Typing effect for the hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect after page load
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                setTimeout(() => {
+                    typeWriter(heroTitle, 'WELLINGTON', 150);
+                }, 500);
+            }
+        });
+
+        // Add floating animation to profile image
+        const profileImg = document.querySelector('.profile-img');
+        if (profileImg) {
+            let floatDirection = 1;
+            setInterval(() => {
+                const currentTransform = profileImg.style.transform || 'translateY(0px)';
+                const currentY = parseFloat(currentTransform.match(/-?\d+\.?\d*/)) || 0;
+                
+                if (currentY >= 10) floatDirection = -1;
+                if (currentY <= -10) floatDirection = 1;
+                
+                profileImg.style.transform = `translateY(${currentY + (floatDirection * 0.5)}px)`;
+            }, 50);
+        }
+
     </script>
 </body>
 </html>
