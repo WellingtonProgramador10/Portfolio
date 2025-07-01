@@ -18,7 +18,7 @@ Bem-vindo(a) ao meu portfólio! Aqui você encontra alguns dos projetos que dese
 ## 📫 **Contato**
 - ✉️ Email: wellingtonbisposantoss@gmail.com
 - 🖥️ Meu portfólio: https://wellingtonprogramador10.github.io/Portfolio/
-- 📱 WhatsApp: 11 95096405
+- 📱 WhatsApp: 11 950964105
 
 ---
 
